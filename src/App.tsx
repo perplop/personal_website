@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Terminal, ArrowRight, Database, Cpu, School, Briefcase, ChevronDown, Github, Linkedin, Mail, Waves, RefreshCw, Activity } from 'lucide-react';
+import { Terminal, ArrowRight, Database, Cpu, School, Briefcase, ChevronDown, Waves, RefreshCw, Activity } from 'lucide-react';
 import { PROJECTS, EDUCATION, EXPERIENCE } from './constants';
 
 type Page = 'about' | 'projects' | 'dragon-boat';
@@ -69,7 +69,14 @@ export default function App() {
           >
             Dragon Boat
           </button>
-          <button className="text-on-surface hover:text-primary transition-colors">Resume</button>
+          <a
+            href="/SWE_Resume_AndyChen.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="text-on-surface hover:text-primary transition-colors"
+          >
+            Resume
+          </a>
         </div>
 
         <div className="flex items-center gap-4">
@@ -97,9 +104,9 @@ export default function App() {
           © 2024 Andy Chen
         </div>
         <div className="flex gap-12 font-body uppercase tracking-widest text-xs">
-          <a href="#" className="text-on-surface/60 hover:text-primary transition-colors">GitHub</a>
-          <a href="#" className="text-on-surface/60 hover:text-primary transition-colors">LinkedIn</a>
-          <a href="#" className="text-on-surface/60 hover:text-primary transition-colors">Email</a>
+          <a href="https://github.com/" target="_blank" rel="noreferrer" className="text-on-surface/60 hover:text-primary transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/andycbsci" target="_blank" rel="noreferrer" className="text-on-surface/60 hover:text-primary transition-colors">LinkedIn</a>
+          <a href="mailto:andyx.chen@mail.utoronto.ca" className="text-on-surface/60 hover:text-primary transition-colors">Email</a>
         </div>
         <div className="mt-6 md:mt-0 font-body uppercase tracking-widest text-[10px] text-on-surface/30">
           Engineered for the Digital Frontier
@@ -268,18 +275,18 @@ function ProjectsPage() {
     <div className="pt-32 spacetime-grid min-h-screen">
       <section className="px-8 md:px-24 mb-32 grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="md:col-span-8">
-          <span className="font-mono text-primary text-sm tracking-[0.3em] uppercase mb-4 block">Selected Works 2024</span>
+          <span className="font-mono text-primary text-sm tracking-[0.3em] uppercase mb-4 block">Selected Works 2026</span>
           <h1 className="font-headline text-6xl md:text-8xl italic leading-tight mb-8">
             Bridging <span className="text-on-surface">Cognition</span> & <span className="text-primary">Computational</span> Rigor.
           </h1>
           <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-            A portfolio of foundational explorations and technical architectures grounded in mathematical rigor and modern data engineering.
+            A portfolio of software, machine learning, and research projects spanning full-stack development, computer vision, and technical leadership.
           </p>
         </div>
         <div className="md:col-span-4 flex items-end justify-end">
           <div className="border-l-2 border-primary pl-6 py-2">
             <span className="block font-mono text-xs text-outline mb-2">CURRENT FOCUS</span>
-            <span className="block text-primary text-lg">Distributed Systems &<br />Deep Learning Architectures</span>
+            <span className="block text-primary text-lg">Software Engineering &<br />Machine Learning Systems</span>
           </div>
         </div>
       </section>
@@ -294,8 +301,9 @@ function ProjectsPage() {
                 <span className="text-on-tertiary bg-tertiary/10 px-2 py-1 uppercase tracking-widest text-[10px] mb-4 inline-block font-mono">Languages</span>
                 <ul className="space-y-4 font-mono text-lg">
                   <li className="flex items-center gap-3"><span className="w-2 h-2 bg-primary"></span> Python</li>
-                  <li className="flex items-center gap-3"><span className="w-2 h-2 bg-primary"></span> Rust</li>
-                  <li className="flex items-center gap-3 text-on-surface-variant/40"><span className="w-2 h-2 bg-outline"></span> C++</li>
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 bg-primary"></span> TypeScript</li>
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 bg-primary"></span> Java</li>
+                  <li className="flex items-center gap-3 text-on-surface-variant/70"><span className="w-2 h-2 bg-primary"></span> C++</li>
                 </ul>
               </div>
             </div>
@@ -303,12 +311,12 @@ function ProjectsPage() {
           <div className="md:col-span-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="bg-surface-container p-8 border-b-2 border-primary">
-                <h4 className="font-mono text-primary mb-4 text-sm tracking-widest">DATA ENGINEERING</h4>
-                <p className="text-on-surface-variant leading-relaxed">High-throughput pipeline architecture using Apache Spark, Kafka, and custom Rust-based extractors for real-time telemetry processing.</p>
+                <h4 className="font-mono text-primary mb-4 text-sm tracking-widest">SOFTWARE ENGINEERING</h4>
+                <p className="text-on-surface-variant leading-relaxed">Building full-stack applications with TypeScript, modular backend design, and production-oriented data workflows.</p>
               </div>
               <div className="bg-surface-container p-8 border-b-2 border-tertiary">
                 <h4 className="font-mono text-tertiary mb-4 text-sm tracking-widest">MACHINE LEARNING</h4>
-                <p className="text-on-surface-variant leading-relaxed">Development of custom neural layers for sequence modeling and historical document digitization using transformer architectures.</p>
+                <p className="text-on-surface-variant leading-relaxed">Developing computer vision and LLM-powered systems for real-time inference, study automation, and data-driven experimentation.</p>
               </div>
             </div>
           </div>
