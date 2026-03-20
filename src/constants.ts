@@ -1,3 +1,16 @@
+/** Public contact info for the site */
+export const CONTACT_EMAIL = 'andychen3870@gmail.com';
+export const CONTACT_PHONE_DISPLAY = '403-973-9330';
+/** E.164 for tel: links */
+export const CONTACT_PHONE_TEL = '+14039739330';
+export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Hello from your website')}`;
+
+export const CONTACT_GITHUB_URL = 'https://github.com/perplop';
+export const CONTACT_LINKEDIN_URL = 'https://www.linkedin.com/in/andycbsci';
+
+/** University College Dragon Boat Club — Linktree (interest form, Discord, socials) */
+export const UCDBC_LINKTREE_URL =
+  'https://linktr.ee/UCDBC?utm_source=ig&utm_medium=social&utm_content=link_in_bio';
 
 export const PROJECTS = [
   {
@@ -31,15 +44,39 @@ export const PROJECTS = [
   }
 ];
 
-export const EDUCATION = [
+/** Narrative blocks: IB → UTM → transfer to St. George */
+export const EDUCATION_STORY = [
   {
-    period: '2023 — 2027 (EXPECTED)',
-    institution: 'University of Toronto',
-    degree: 'Honours B.Sc. in Computer Science, Mathematics, and Physics',
-    description: 'Relevant coursework includes Data Structures & Algorithms, Software Engineering, Systems Programming, and Machine Learning.',
-    icon: 'school'
-  }
-];
+    id: 'ib',
+    title: 'International Baccalaureate (IB)',
+    period: 'High school',
+    body:
+      'I went through the IB Diploma Programme — a pretty intense mix of higher-level STEM, the extended essay, and CAS. It pushed me to learn in depth, juggle long-term assignments with exams, and get comfortable being curious across subjects.',
+  },
+  {
+    id: 'utm',
+    title: 'University of Toronto Mississauga (UTM)',
+    period: 'First year',
+    body:
+      'I started my undergraduate degree at UTM. That year was about finding my footing at university, leaning into math and computer science, and figuring out what I wanted the rest of my degree to look like.',
+  },
+  {
+    id: 'utsg',
+    title: 'University of Toronto — St. George',
+    period: 'After first year',
+    body:
+      'After first year I transferred to the St. George campus to continue Honours Computer Science, Mathematics, and Physics — closer to the courses, research opportunities, and student communities I wanted to grow with downtown.',
+  },
+] as const;
+
+/** Current degree (where you are now) */
+export const CURRENT_DEGREE = {
+  period: '2023 — 2027 (expected)',
+  institution: 'University of Toronto — St. George',
+  degree: 'Honours B.Sc. in Computer Science, Mathematics, and Physics',
+  description:
+    'Relevant coursework includes Data Structures & Algorithms, Software Engineering, Systems Programming, and Machine Learning.',
+} as const;
 
 export const EXPERIENCE = [
   {

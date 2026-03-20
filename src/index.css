@@ -19,6 +19,10 @@
   --color-outline: #84948c;
   --color-tertiary: #ffe5e2;
   --color-on-tertiary: #690006;
+  --color-space-lilac: #c4b5fd;
+  --color-space-blush: #fbcfe8;
+  --color-space-mint: #6ee7b7;
+  --color-space-cream: #fef3c7;
 }
 
 @layer base {
@@ -39,4 +43,50 @@
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Cute cosmic landing */
+.cosmic-cute-bg {
+  background:
+    radial-gradient(ellipse 130% 90% at 50% -15%, rgba(196, 181, 253, 0.22), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 100% 40%, rgba(251, 207, 232, 0.12), transparent 50%),
+    radial-gradient(ellipse 70% 60% at 0% 85%, rgba(110, 231, 183, 0.14), transparent 45%),
+    radial-gradient(ellipse 50% 40% at 80% 90%, rgba(254, 243, 199, 0.08), transparent 40%),
+    #131313;
+}
+
+@keyframes cosmic-twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes cosmic-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.cute-star {
+  position: absolute;
+  border-radius: 9999px;
+  background: white;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+  animation: cosmic-twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
+  pointer-events: none;
+}
+
+.cosmic-float-slow {
+  animation: cosmic-float 5s ease-in-out infinite;
 }
