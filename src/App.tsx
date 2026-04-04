@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Terminal, ArrowRight, Database, Cpu, School, Briefcase, ChevronDown, Waves, RefreshCw, Activity, Mail, Phone, Github, Linkedin, Sparkles } from 'lucide-react';
+import { Terminal, ArrowRight, Database, Cpu, School, Briefcase, ChevronDown, Waves, RefreshCw, Activity, Mail, Phone, Github, Linkedin, Orbit } from 'lucide-react';
 import {
   PROJECTS,
   EDUCATION_STORY,
@@ -68,7 +68,7 @@ export default function App() {
           Andy Chen
         </div>
         
-        <div className="hidden md:flex items-center gap-12 font-headline italic text-lg">
+        <div className="hidden md:flex items-center gap-12 font-body font-medium text-lg tracking-tight">
           <button 
             onClick={() => setCurrentPage('about')}
             className={`transition-colors ${currentPage === 'about' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface hover:text-primary'}`}
@@ -134,7 +134,7 @@ export default function App() {
           <a href={`tel:${CONTACT_PHONE_TEL}`} className="text-on-surface/60 hover:text-primary transition-colors">Phone</a>
         </div>
         <div className="mt-6 md:mt-0 font-body uppercase tracking-widest text-[10px] text-on-surface/30">
-          Made with stardust ✦
+          React · Vite · Tailwind
         </div>
       </footer>
     </div>
@@ -200,8 +200,8 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
             className="w-full h-full object-cover mix-blend-screen"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-space-lilac/10 via-transparent to-background" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-space-blush/5" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/8 via-transparent to-background" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-space-depth/10" />
         </div>
         <CuteStarfield className="z-[1]" />
 
@@ -210,22 +210,17 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="inline-flex items-center gap-2 rounded-full border border-space-lilac/35 bg-space-lilac/10 px-4 py-2 text-sm text-on-surface mb-8"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-4 py-2 text-sm text-on-surface mb-8"
           >
-            <Sparkles className="text-space-cream shrink-0" size={18} aria-hidden />
-            <span className="font-body tracking-wide">
-              <span className="mr-1" aria-hidden>
-                👽
-              </span>
-              Hello, alien visitor — welcome to my little corner of the web!
-            </span>
+            <Orbit className="text-primary shrink-0" size={18} aria-hidden />
+            <span className="font-body tracking-wide">Hello, visitor — welcome to my site.</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25 }}
-            className="font-headline italic text-5xl md:text-7xl tracking-tight leading-[1.05] mb-6 text-on-surface"
+            className="font-display font-bold text-5xl md:text-7xl tracking-tight leading-[1.05] mb-6 text-on-surface"
           >
             Andy Chen
           </motion.h1>
@@ -241,7 +236,7 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
             <button
               type="button"
               onClick={onViewDragonBoat}
-              className="text-space-mint underline decoration-wavy decoration-space-mint/60 underline-offset-4 hover:text-primary transition-colors font-semibold"
+              className="text-primary underline decoration-primary/50 decoration-2 underline-offset-4 hover:brightness-110 transition-all font-semibold"
             >
               NDUC
             </button>
@@ -252,9 +247,9 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.42 }}
-            className="font-headline italic text-2xl md:text-3xl text-space-blush mb-8 cosmic-float-slow"
+            className="font-mono text-lg md:text-xl text-primary/85 mb-8 tracking-wide"
           >
-            Zeep Zorp Zoup! ✦
+            Zeep Zorp Zoup.
           </motion.p>
 
           <motion.div
@@ -266,7 +261,7 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
             <p className="font-body text-base md:text-lg text-on-surface-variant leading-relaxed">
               For whatever reason you stumbled across this site — whether you&apos;re a recruiter, my friend, or anyone else —{' '}
               <span className="text-on-surface">welcome!</span> Grab some snacks and a cup of coffee while I tell you a bit more
-              about me. ☕🍿
+              about me.
             </p>
           </motion.div>
 
@@ -286,25 +281,25 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
             <button
               type="button"
               onClick={scrollToContact}
-              className="inline-flex items-center justify-center rounded-full border-2 border-space-lilac/40 text-on-surface px-8 py-3.5 font-body font-bold bg-space-lilac/5 hover:bg-space-lilac/15 transition-all"
+              className="inline-flex items-center justify-center rounded-full border-2 border-outline/30 text-on-surface px-8 py-3.5 font-body font-bold bg-surface-container hover:border-primary/40 hover:bg-surface-container-low transition-all"
             >
               Say hi!
             </button>
           </motion.div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-space-cream/50 animate-bounce" aria-hidden>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-outline animate-bounce" aria-hidden>
           <ChevronDown size={28} />
         </div>
       </section>
 
       {/* Featured Work */}
       <section className="bg-surface-container-low py-32 px-8 md:px-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-space-lilac/5 blur-3xl pointer-events-none" aria-hidden />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" aria-hidden />
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-20 relative z-10">
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-space-mint mb-3 block">Artifacts in orbit</span>
-            <h2 className="font-headline italic text-4xl md:text-6xl text-on-surface">Things I&apos;ve built &amp; led</h2>
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-3 block">Featured</span>
+            <h2 className="font-display font-bold text-4xl md:text-6xl text-on-surface tracking-tight">Things I&apos;ve built &amp; led</h2>
           </div>
           <div className="hidden md:block h-px bg-outline/20 flex-grow mx-8 mb-4" />
           <button
@@ -331,7 +326,7 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
                     referrerPolicy="no-referrer"
                   />
                   <div className="p-12 absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background to-transparent pointer-events-none">
-                    <h3 className="text-3xl font-headline italic mb-2 text-primary">{project.title}</h3>
+                    <h3 className="text-3xl font-headline font-semibold mb-2 text-primary tracking-tight">{project.title}</h3>
                     <p className="font-body text-on-surface-variant max-w-md">{project.description}</p>
                   </div>
                 </div>
@@ -339,7 +334,7 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
                 <div className="p-8 h-full flex flex-col justify-between">
                   <div className="mb-8">
                     {project.icon === 'database' ? <Database className="text-primary mb-6" size={40} /> : <Cpu className="text-primary mb-6" size={40} />}
-                    <h3 className="text-2xl font-headline italic mb-4">{project.title}</h3>
+                    <h3 className="text-2xl font-headline font-semibold mb-4 tracking-tight">{project.title}</h3>
                     <p className="font-body text-sm text-on-surface-variant">{project.description}</p>
                   </div>
                   <div className="flex justify-between items-center pt-8 border-t border-white/5">
@@ -358,21 +353,18 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
         <CuteStarfield className="opacity-40 z-0" />
         <div className="absolute inset-0 spacetime-grid opacity-15 pointer-events-none z-0" />
         <div className="relative z-10 max-w-2xl mx-auto">
-          <span className="text-3xl mb-4 block" aria-hidden>
-            🛸
-          </span>
-          <h2 className="font-headline italic text-4xl md:text-6xl mb-6 text-on-surface leading-tight">
-            Want to chat across the <span className="text-space-mint">void</span>?
+          <h2 className="font-display font-bold text-4xl md:text-6xl mb-6 text-on-surface leading-tight tracking-tight">
+            Let&apos;s <span className="text-primary">talk</span>
           </h2>
           <p className="font-body text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed">
-            I&apos;m always happy to hear from fellow humans (and friendly extraterrestrials). Drop a line — no warp drive required.
+            Recruiters, collaborators, or anyone curious — send a message and I&apos;ll get back to you.
           </p>
           <button
             type="button"
             onClick={scrollToContact}
-            className="inline-flex items-center justify-center rounded-full bg-tertiary text-on-tertiary px-10 py-4 font-body font-bold text-base md:text-lg hover:opacity-90 transition-opacity tracking-wide uppercase shadow-[0_0_24px_rgba(255,229,226,0.15)]"
+            className="inline-flex items-center justify-center rounded-full bg-tertiary text-on-tertiary px-10 py-4 font-body font-bold text-base md:text-lg hover:opacity-90 transition-opacity tracking-wide uppercase shadow-[0_0_24px_rgba(56,189,248,0.2)]"
           >
-            Open comms channel
+            Contact
           </button>
         </div>
       </section>
@@ -382,15 +374,15 @@ function AboutPage({ onViewProjects, onViewDragonBoat }: AboutPageProps) {
         ref={contactSectionRef}
         id="contact"
         aria-labelledby="contact-heading"
-        className="scroll-mt-28 py-24 md:py-32 px-8 md:px-24 bg-[#131313] border-t border-space-lilac/10"
+        className="scroll-mt-28 py-24 md:py-32 px-8 md:px-24 bg-[#131313] border-t border-outline/15"
       >
         <div className="max-w-3xl mx-auto text-center">
-          <span className="font-body text-xs uppercase tracking-[0.35em] text-space-mint mb-4 block">Coordinates</span>
-          <h2 id="contact-heading" className="font-headline italic text-4xl md:text-5xl text-on-surface mb-4">
-            Beam me a message ✦
+          <span className="font-body text-xs uppercase tracking-[0.35em] text-primary mb-4 block">Contact</span>
+          <h2 id="contact-heading" className="font-display font-bold text-4xl md:text-5xl text-on-surface mb-4 tracking-tight">
+            Get in touch
           </h2>
           <p className="font-body text-on-surface-variant text-lg mb-12 max-w-xl mx-auto leading-relaxed">
-            Email, phone, or socials — pick your favorite frequency.
+            Email, phone, or socials — whatever you prefer.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
             <a
@@ -450,7 +442,7 @@ function EducationPage() {
     <div className="pt-28 md:pt-32 spacetime-grid min-h-screen pb-24">
       <section className="px-8 md:px-24 mb-16 md:mb-20">
         <span className="font-mono text-primary text-sm tracking-[0.3em] uppercase mb-4 block">Education</span>
-        <h1 className="font-headline text-4xl md:text-7xl italic leading-tight mb-8 text-on-surface">
+        <h1 className="font-display font-bold text-4xl md:text-7xl leading-tight mb-8 text-on-surface tracking-tight">
           IB, UTM, then <span className="text-primary">St. George</span>
         </h1>
         <p className="text-lg md:text-xl text-on-surface-variant max-w-3xl leading-relaxed">
@@ -465,8 +457,8 @@ function EducationPage() {
             key={block.id}
             className="rounded-2xl border border-white/10 bg-surface-container-low/90 backdrop-blur-sm p-8 md:p-10"
           >
-            <span className="font-mono text-xs text-space-mint tracking-[0.2em] uppercase">{block.period}</span>
-            <h2 className="font-headline text-2xl md:text-4xl italic mt-2 mb-4 text-on-surface">{block.title}</h2>
+            <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase">{block.period}</span>
+            <h2 className="font-headline font-semibold text-2xl md:text-4xl mt-2 mb-4 text-on-surface tracking-tight">{block.title}</h2>
             <p className="font-body text-on-surface-variant leading-relaxed max-w-3xl text-base md:text-lg">{block.body}</p>
           </article>
         ))}
@@ -489,7 +481,7 @@ function EducationPage() {
       </section>
 
       <section className="py-16 md:py-24 px-8 md:px-24 bg-[#0e0e0e] border-t border-white/5">
-        <h2 className="font-headline text-3xl md:text-4xl italic mb-12 md:mb-16 text-center text-on-surface">Experience</h2>
+        <h2 className="font-display font-bold text-3xl md:text-4xl mb-12 md:mb-16 text-center text-on-surface tracking-tight">Experience</h2>
         <div className="max-w-4xl mx-auto relative pl-10 md:pl-12 border-l border-outline/20 space-y-16 md:space-y-24">
           {EXPERIENCE.map((item, idx) => (
             <div key={idx} className="relative">
@@ -516,7 +508,7 @@ function ProjectsPage() {
       <section className="px-8 md:px-24 mb-20 grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="md:col-span-8">
           <span className="font-mono text-primary text-sm tracking-[0.3em] uppercase mb-4 block">Projects</span>
-          <h1 className="font-headline text-5xl md:text-8xl italic leading-tight mb-8 text-on-surface">
+          <h1 className="font-display font-bold text-5xl md:text-8xl leading-tight mb-8 text-on-surface tracking-tight">
             Things I&apos;ve <span className="text-primary">shipped</span> &amp; led
           </h1>
           <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
@@ -538,7 +530,7 @@ function ProjectsPage() {
       <section className="bg-surface-container-low py-24 px-8 md:px-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           <div>
-            <h3 className="font-headline italic text-3xl mb-12 text-on-surface">Skill stack</h3>
+            <h3 className="font-display font-bold text-3xl mb-12 text-on-surface tracking-tight">Skill stack</h3>
             <div className="space-y-8">
               <div>
                 <span className="text-on-tertiary bg-tertiary/10 px-2 py-1 uppercase tracking-widest text-[10px] mb-4 inline-block font-mono">
@@ -586,7 +578,7 @@ function ProjectsPage() {
       </section>
 
       <section className="px-8 md:px-24 py-20 md:py-28">
-        <h2 className="font-headline italic text-3xl md:text-5xl mb-4 text-on-surface">Selected work</h2>
+        <h2 className="font-display font-bold text-3xl md:text-5xl mb-4 text-on-surface tracking-tight">Selected work</h2>
         <p className="text-on-surface-variant mb-12 max-w-2xl">Same highlights as on the home page — in one grid.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {PROJECTS.map((project) => (
@@ -603,7 +595,7 @@ function ProjectsPage() {
                     referrerPolicy="no-referrer"
                   />
                   <div className="p-8 md:p-12 absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background to-transparent pointer-events-none">
-                    <h3 className="text-2xl md:text-3xl font-headline italic mb-2 text-primary">{project.title}</h3>
+                    <h3 className="text-2xl md:text-3xl font-headline font-semibold mb-2 text-primary tracking-tight">{project.title}</h3>
                     <p className="font-body text-on-surface-variant max-w-md text-sm md:text-base">{project.description}</p>
                   </div>
                 </div>
@@ -615,7 +607,7 @@ function ProjectsPage() {
                     ) : (
                       <Cpu className="text-primary mb-6" size={40} />
                     )}
-                    <h3 className="text-2xl font-headline italic mb-4">{project.title}</h3>
+                    <h3 className="text-2xl font-headline font-semibold mb-4 tracking-tight">{project.title}</h3>
                     <p className="font-body text-sm text-on-surface-variant">{project.description}</p>
                   </div>
                   <div className="flex justify-between items-center pt-8 border-t border-white/5">
@@ -640,7 +632,7 @@ function DragonBoatPage() {
       <section className="relative px-8 md:px-24 pt-20 pb-40 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         <div className="md:col-span-7 z-10">
           <span className="font-body text-xs uppercase tracking-[0.3em] text-on-tertiary bg-tertiary/10 px-3 py-1 mb-6 inline-block">On the water</span>
-          <h1 className="font-headline italic text-7xl md:text-9xl text-on-surface leading-tight mb-8">
+          <h1 className="font-display font-bold text-7xl md:text-9xl text-on-surface leading-tight mb-8 tracking-tight">
             NDUC <br />
             <span className="text-primary">New Dragons.</span>
           </h1>
@@ -672,7 +664,7 @@ function DragonBoatPage() {
       <section className="bg-surface-container-low py-32 px-8 md:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-            <h2 className="font-headline text-5xl italic text-on-surface max-w-md">The Mechanics of Momentum</h2>
+            <h2 className="font-display font-bold text-5xl text-on-surface max-w-md tracking-tight">The Mechanics of Momentum</h2>
             <div className="h-px bg-outline/20 flex-grow mx-8 hidden md:block mb-4 opacity-30"></div>
             <span className="font-body text-on-surface-variant text-sm tracking-tighter">REF: DB-ARCH_2024</span>
           </div>
@@ -701,7 +693,7 @@ function DragonBoatPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
           <div>
             <span className="font-body text-primary uppercase text-xs tracking-[0.4em] mb-4 block">Seasonal Analytics</span>
-            <h2 className="font-headline text-5xl italic mb-12">Performance Benchmarks</h2>
+            <h2 className="font-display font-bold text-5xl mb-12 tracking-tight">Performance Benchmarks</h2>
             <div className="space-y-16">
               {[
                 { label: 'Stroke Rate', value: '82', unit: 'SPM', color: 'bg-primary' },
@@ -711,7 +703,7 @@ function DragonBoatPage() {
                 <div key={idx} className="border-b border-outline/20 pb-6">
                   <div className="flex justify-between items-baseline mb-2">
                     <span className="font-body text-lg uppercase tracking-widest">{stat.label}</span>
-                    <span className="font-headline italic text-4xl text-primary">{stat.value} <span className="text-sm font-body not-italic uppercase text-on-surface-variant">{stat.unit}</span></span>
+                    <span className="font-display font-bold text-4xl text-primary">{stat.value} <span className="text-sm font-body font-medium uppercase text-on-surface-variant">{stat.unit}</span></span>
                   </div>
                   <div className="w-full h-1 bg-surface-container">
                     <div className={`${stat.color} h-full`} style={{ width: `${parseFloat(stat.value) > 100 ? 100 : stat.value}%` }}></div>
@@ -738,7 +730,7 @@ function DragonBoatPage() {
             </code>
             <div className="mt-12 pt-12 border-t border-outline/20">
               <h5 className="font-body uppercase text-xs text-primary mb-4 tracking-widest">Next Competition</h5>
-              <p className="font-headline text-3xl italic">Vancouver International Dragon Boat Festival</p>
+              <p className="font-display font-semibold text-3xl tracking-tight">Vancouver International Dragon Boat Festival</p>
               <p className="font-body text-on-surface-variant mt-2">June 2025 • False Creek</p>
             </div>
           </div>
@@ -746,7 +738,7 @@ function DragonBoatPage() {
       </section>
 
       <section className="py-40 text-center relative px-8">
-        <h2 className="font-headline text-6xl md:text-8xl italic mb-12 opacity-80">Join the Rhythm.</h2>
+        <h2 className="font-display font-bold text-6xl md:text-8xl mb-12 opacity-90 tracking-tight">Join the Rhythm.</h2>
         <a
           href={UCDBC_LINKTREE_URL}
           target="_blank"
